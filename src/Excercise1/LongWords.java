@@ -1,4 +1,4 @@
-package Excercise2;
+package Excercise1;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -7,10 +7,15 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class LongWords {
 
     private List<String> txtFile;
+
+    public LongWords() throws IOException {
+        readTxtFile();
+    }
 
     public void readTxtFile() throws IOException {
         String txtFile;
@@ -32,7 +37,11 @@ public class LongWords {
                 .count();
     }
 
-    public LongWords() throws IOException {
-        readTxtFile();
+    public List<String> get5Words() {
+        return(txtFile.parallelStream()
+                .filter(s -> s.length()>10)
+                .limit(5)
+                .peek(s -> System.out.println(s))
+                .collect(Collectors.toList()));
     }
 }

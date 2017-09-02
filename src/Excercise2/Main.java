@@ -1,4 +1,12 @@
 package Excercise2;
+/*
+Zmierz różnicę pomiędzy zliczaniem długich słów za pomocą parallelStream
+i stream. Wywołaj System.currentTimeMillis przed wywołaniem i po nim, a następnie
+wyświetl różnicę. Wykorzystaj dłuższy tekst (na przykład Wojnę i pokój),
+jeśli masz szybki komputer.
+*/
+
+import Excercise1.LongWords;
 
 import java.io.IOException;
 
